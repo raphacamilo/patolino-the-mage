@@ -44,7 +44,9 @@ module.exports = {
       );
 
       const data = await response.json();
-      await interaction.editReply(data.choices[0].message.content);
+      await interaction.editReply(
+        `Pergunta: ${stringRequest}\n\n${data.choices[0].message.content}`
+      );
     } catch (error) {
       await interaction.editReply('Ocorreu um erro inesperado');
     }
